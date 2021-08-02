@@ -37,11 +37,10 @@ public class Gun : MonoBehaviour
     public AudioSource gunFX;
     public AudioSource outOfAmmoFX;
     public AudioSource reloadFX;
+    public AudioSource enemyDeadSound;
 
     private float nextTimeToFire = 0f;
     private float normalRecoil;
-
-
 
     void Awake()
     {
@@ -54,6 +53,7 @@ public class Gun : MonoBehaviour
     {
       currentAmmo = maxAmmo;
       normalRecoil = recoilRange;
+      //enemyDeadSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -90,6 +90,7 @@ public class Gun : MonoBehaviour
       {
             Destroy(hit.transform.gameObject);
             ScoreScript.ScoreNum++;
+            enemyDeadSound.Play();
         }
     }
 
