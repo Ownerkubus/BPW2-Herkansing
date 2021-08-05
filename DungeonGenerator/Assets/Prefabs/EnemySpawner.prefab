@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 7786682720822423243, guid: edb533b76fef71c4494bef44fd164459, type: 3}
   dungeonGenerator: {fileID: 0}
+  Quest: {fileID: 7005483246705880197, guid: f0fc2fd6912cbcf419827aa246bffc56, type: 3}

@@ -11,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
 
     public Room room;
 
+    public GameObject Quest;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         dungeonGenerator.OnDungeonGenerationDone += SpawnEnemy;
         SpawnEnemy();
+        //SpawnQuest();
     }
 
     public void SpawnEnemy()
@@ -28,5 +31,11 @@ public class EnemySpawner : MonoBehaviour
         GameObject newEnemy;
         newEnemy = Instantiate(Enemy, new Vector3(room.position.x, 0.3f, room.position.y), Quaternion.identity);
     }
+
+//    public void SpawnQuest()
+    //{
+      //  GameObject newQuest;
+    //    newQuest = Instantiate(Quest, new Vector3(room.position.x, 0.3f, room.position.y), Quaternion.identity);
+  //  }
 
 }

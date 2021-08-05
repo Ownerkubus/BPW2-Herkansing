@@ -14,6 +14,7 @@ public class DungeonGenerator : MonoBehaviour
     public int minRoomSize = 3;
     public int maxRoomSize = 7;
     public GameObject player;
+    public GameObject Quest;
     public Vector3 playerStartPosition;
     public Room beginKamer;
     public GameObject EnemySpawner;
@@ -165,6 +166,10 @@ public class DungeonGenerator : MonoBehaviour
         GameObject newPlayer;
         newPlayer = Instantiate(player, new Vector3(beginKamer.position.x + beginKamer.size.x / 2, 0.3f, beginKamer.position.y + beginKamer.size.y / 2), player.transform.rotation);
         newPlayer.SetActive(true);
+
+        GameObject newQuest;
+        newQuest = Instantiate(Quest, new Vector3(beginKamer.position.x + beginKamer.size.x / 2, 0.3f, beginKamer.position.y + beginKamer.size.y / 2 + 0.5f), Quest.transform.rotation);
+        newQuest.SetActive(true);
         OnDungeonGenerationDone?.Invoke();
 
     }
